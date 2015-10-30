@@ -1,0 +1,8 @@
+class CreateVilles < ActiveRecord::Migration
+  def change
+    create_table :villes do |t|
+
+      t.timestamps
+    end
+  end
+end

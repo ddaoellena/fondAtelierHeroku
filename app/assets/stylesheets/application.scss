@@ -1,0 +1,78 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.simple_form label {
+  float: left;
+  width: 100px;
+  text-align: right;
+  margin: 2px 10px;
+}
+
+.simple_form div.input {
+  margin-bottom: 10px;
+}
+
+textarea{
+  resize: none;
+}
+
+form{
+  width:500px;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container{
+  width: 940px;
+}
+
+form{
+    width:50%; 
+    margin:0 auto;
+}
+
+#new_annonce_box{
+display: table;
+width:50%;
+height: 100px;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a9db80+0,96c56f+100;Green+3D+%232 */
+background: #a9db80; /* Old browsers */
+background: -moz-linear-gradient(left,  #a9db80 0%, #96c56f 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#a9db80), color-stop(100%,#96c56f)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  #a9db80 0%,#96c56f 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  #a9db80 0%,#96c56f 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  #a9db80 0%,#96c56f 100%); /* IE10+ */
+background: linear-gradient(to right,  #a9db80 0%,#96c56f 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9db80', endColorstr='#96c56f',GradientType=1 ); /* IE6-9 */
+
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+
+}
+
+#new_annonce{
+text-align:center;
+  color: white;
+  display: table-cell; 
+  vertical-align: middle;
+}

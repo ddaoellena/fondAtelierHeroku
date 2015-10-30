@@ -1,0 +1,43 @@
+<div class="container">
+<h3>Titre</h3>
+<%= @annonce.titre %>
+
+<h4>Crée le </h4><%= @annonce.created_at %>
+
+<h3>Catégorie</h3>
+<%= @categorie %>
+<br>
+
+<h3>Description</h3>
+<%= @annonce.description %>
+<br>
+
+<h3><%= "Téléphone" if @annonce.telephone? %></h3>
+<%= @annonce.telephone if @annonce.telephone? %>
+<%= "<br>".html_safe if @annonce.telephone? %>
+
+<h3><%= "Ville" %></h3>
+<%= @ville %>
+<br>
+
+<h3><%= "Annonceur" %></h3>
+<%= @user_name_string %>
+<br>
+
+
+<%= image_tag @annonce.image.url %>
+
+
+
+<% if user_signed_in? %>
+	<% if current_user.id == @annonce.user_id %>
+		<%= link_to "Editer", edit_annonce_path %>
+		<%= link_to "Supprimer", annonce_path, method: :delete, data: { confirm: "êtes vous sur ?"} %>
+	<%end%>
+<%end%>
+
+</div>
+
+<%= link_to "Retour", annonces_path %>
+
+<p id="notice"><%= notice %></p>

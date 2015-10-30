@@ -1,0 +1,8 @@
+class CreateEcoles < ActiveRecord::Migration
+  def change
+    create_table :ecoles do |t|
+
+      t.timestamps
+    end
+  end
+end

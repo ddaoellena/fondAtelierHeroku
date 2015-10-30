@@ -16,4 +16,5 @@ class Annonces < ActiveRecord::Base
   		where("description LIKE ?", "%#{search}%")
   	end
 
+
 end
