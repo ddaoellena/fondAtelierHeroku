@@ -1,0 +1,2 @@
+module MesAnnoncesHelper
+end

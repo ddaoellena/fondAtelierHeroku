@@ -1,19 +1,19 @@
 <div class="container">
 
-<h1><%= link_to "Accueil", root_path %></h1>
+	<h1><%= link_to "Accueil", root_path %></h1>
+	<h1><%= params[:categories] %></h1>
+	<h1>Annonces</h1>
 
-<h1><%= params[:categories] %></h1>
-<h1>Annonces</h1>
-
-<%= form_tag(annonces_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Que cherchez-vous ?" %>
-<%= submit_tag "Recherche" %>
-<% end %>
-
-<%= link_to "Annonces les plus récentes", annonces_path %>
-<% Categories.all.each do |categories| %>
-	<td><%= link_to categories.name, annonces_path(categories: categories.name) %></td>
-<% end %>
+	<%= form_tag(annonces_path, :method => "get", id: "search-form") do %>
+		<%= text_field_tag :search, params[:search], placeholder: "Que cherchez-vous ?" %>
+		<%= submit_tag "Recherche" %>
+	<% end %>
+<!--
+	<%= link_to "Annonces les plus récentes", annonces_path %>
+-->
+	<% Categories.all.each do |categories| %>
+		<td><%= link_to categories.name, annonces_path(categories: categories.name) %></td>
+	<% end %>
 
 <table>
 	
@@ -28,5 +28,6 @@
 	</tr>
 <% end %>
 
-</div>
+
 </table>
+</div>
