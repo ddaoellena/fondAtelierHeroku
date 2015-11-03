@@ -56,10 +56,12 @@ class AnnoncesController < ApplicationController
 	end
 
 	def update
+		@annonce = Annonces.find(params[:id])
+
 		if @annonce.update(annonce_params)
-			redirect_to @annonce
+			redirect_to @annonce, notice: "Annonce éditée avec succès !"
 		else
-			render "edit"
+			render 'edit'
 		end
 	end
 

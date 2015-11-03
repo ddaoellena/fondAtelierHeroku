@@ -30,7 +30,7 @@
 
 	<% if user_signed_in? %>
 		<% if current_user.id == @annonce.user_id %>
-			<%= link_to "Editer", edit_annonce_path %>
+			<%= link_to "Editer", edit_annonce_path(@annonce) %>
 			<%= link_to "Supprimer", annonce_path, method: :delete, data: { confirm: "êtes vous sur ?"} %>
 		<%end%>
 	<%end%>
