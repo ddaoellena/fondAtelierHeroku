@@ -1,11 +1,11 @@
 <div class="container">
 <h1>Editer l'annonce</h1>
-	<%= form_for :article, url: annonce_path(@annonce), method: :patch do |f| %>
+	<%= form_for :annonce, url: annonce_path(@annonce), method: :patch do |f| %>
 	
 	<% if @annonce.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@article.errors.count, "error") %> prohibited
+        <%= pluralize(@annonce.errors.count, "error") %> prohibited
         this article from being saved:
       </h2>
       <ul>
