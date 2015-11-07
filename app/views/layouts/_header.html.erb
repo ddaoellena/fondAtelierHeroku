@@ -1,21 +1,36 @@
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
 
-		<%= link_to 'Liste des annonces', annonces_path, :class => 'navbar-link' %> |
+		<div>
+			<ul class="nav navbar-nav navbar-right">
+				<% if user_signed_in? %>
+				<li><p class="navbar-text">Connecté en tant que <strong><%= link_to edit_user_registration_path, :class => 'navbar-link' do %><%= current_user.name %></strong></p></li><%end%>
+				<%end%>
 
-		<% if user_signed_in? %>
-		<strong><%= current_user.name %></strong>
-			<%= link_to "Mes annonces", mes_annonces_path,:class => 'navbar-link' %> |
-		  	<%= link_to 'Modifier votre profil', edit_user_registration_path, :class => 'navbar-link' %> |
-		  	<%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> |
-		  <br>
-		<%= link_to 'Nouvelle annonce', new_annonce_path %>
+				<li><%= link_to annonces_path, :class => 'navbar-link' do%><span class="glyphicon glyphicon-th-list"></span> <%= 'Liste des annonces'%>
+				</li><%end%>
 
-		<% else %>
+				<% if user_signed_in? %>
 
-		  <%= link_to "Créer un compte", new_user_registration_path, :class => 'navbar-link'  %> |
-		  <%= link_to "S'identifier", new_user_session_path, :class => 'navbar-link'  %>
+				<li><%= link_to "Mes annonces", mes_annonces_path,:class => 'navbar-link' %></li>
+<!--
+		  		<li><%= link_to 'Modifier votre profil', edit_user_registration_path, :class => 'navbar-link' %></li>-->
+		  		<li><%= link_to destroy_user_session_path, method: :delete, :class => 'navbar-link'  do%><span class='glyphicon glyphicon-off'></span> <%="Se déconnecter"%>
+		  		</li><%end%>
+				
+				<li><%= link_to 'Nouvelle annonce', new_annonce_path %><li>
+
+				<% else %>
+				
+
+		  		<li><%= link_to new_user_registration_path, :class => 'navbar-link' do %><span class="glyphicon glyphicon-user"></span> <%= "Créer un compte" %>
+		  		</li><% end %>
+
+		  		<li><%= link_to new_user_session_path, :class => 'navbar-link' do%> <span class="glyphicon glyphicon-log-in"></span> <%= "S'identifier" %>
+		  		</li><% end %>
 		
-		<% end %>
+				<% end %>
+			</ul>
+		</div>
 	</div>
 </nav>

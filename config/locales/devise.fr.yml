@@ -27,7 +27,10 @@ fr:
       updated: "Votre mot de passe a été changé. Vous êtes maintenant connecté."
     confirmations:
       send_instructions: "Vous allez recevoir un courriel contenant des instructions pour activer votre compte."
-      confirmed: "Votre compte a été activé. Vous êtes maintenant connecté."
+      user:
+        confirmed: "Votre compte a été activé. Bienvenue sur Fond'Atelier."
+      new:
+        resend_confirmation_instructions: "Renvoyer le courriel de confirmation"
     registrations:
       signed_up: "Votre inscription est enregistrée. Si demandé, un courriel de confirmation vous a été envoyé."
       updated: "Votre mise à jour a été prise en compte."
@@ -57,11 +60,6 @@ fr:
       links:    
         didnt_receive_confirmation_instructions?: "Vous n'avez pas reçu de courriel de confirmation ?"
         didnt_receive_unlock_instructions?: "Vous n'avez pas reçu de courriel de déverrouillage de votre compte ?"
-    confirmations:
-      user:
-        confirmed:"Votre compte a été confirmé. Bienvenue sur Fond'Atelier !"
-      new:
-        resend_confirmation_instructions: "Renvoyer le courriel de confirmation"
     mailer:
       confirmation_instructions:
         welcome: "Bienvenu(e)"
