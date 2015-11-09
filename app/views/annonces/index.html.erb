@@ -23,7 +23,7 @@
 		<li><%= link_to categories.name, annonces_path(categories: categories.name) %></li>
 	<% end %>
 	</div>
-<table>
+<table class='table table-hover'>
 	
 	<th>Titre</th>
 	<th>Description</th>
@@ -32,12 +32,11 @@
 <% @annonces.each do |annonce| %>
 	<tr>
 		<td><%= link_to annonce.titre, annonce %></td>
-		<td><%= annonce.description %></td>
-		<td><%= @user_name_string %></td>
+		<td><%= link_to annonce.description, annonce %></td>
+		<td><%=  User.where(id: annonce.user_id).pluck(:name).to_s.tr('[]', '').tr('""', '') %></td>
 
 	</tr>
 <% end %>
-
 
 </table>
 </div>
