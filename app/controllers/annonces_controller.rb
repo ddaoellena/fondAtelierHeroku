@@ -17,7 +17,7 @@ class AnnoncesController < ApplicationController
 	end
 
 	def show
-		#Montrer la catégorie et la ville dans la page de l'annonce
+		#Montrer la catégorie, la ville et le pseudo de l'annonceur dans la page de l'annonce
 		@categorie = Categories.where(id: @annonce.category_id).pluck(:name)
 		@categorie = @categorie.to_s
 		@categorie = @categorie.tr('[]', '')

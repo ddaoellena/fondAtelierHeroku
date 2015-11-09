@@ -17,15 +17,15 @@
 		<%= @annonce.telephone if @annonce.telephone? %>
 	<%= "<br>".html_safe if @annonce.telephone? %>
 
-	<h3><%= "Ville" %></h3>
-		<%= @ville %>
-	<br>
+	<h3><%= "Ville" if @annonce.ville? %></h3>
+	<%= @ville %>
+	<%= "<br>".html_safe if @annonce.ville? %>
 
 	<h3><%= "Annonceur" %></h3>
 		<%= @user_name_string %>
 	<br>
 
-	<%= image_tag @annonce.image.url %>
+	<%= image_tag @annonce.image.url%>
 	<br>
 
 	<% if user_signed_in? %>

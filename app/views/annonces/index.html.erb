@@ -1,11 +1,16 @@
 <div class="container">
 
-
-
+	
+	<div class="form-group"
+	
 	<%= form_tag(annonces_path, :method => "get", id: "search-form") do %>
+		<span class="glyphicon glyphicon-search"></span>
 		<%= text_field_tag :search, params[:search], placeholder: "Que cherchez-vous ?", class: "form-control" %>
 		<%= submit_tag "Recherche", class: "btn btn-default" %>
+	
 	<% end %>
+ 
+	</div>
 
 	
 	<h2 style:'text-align:center;'>Annonces les plus récentes</h2>
@@ -21,12 +26,14 @@
 <table>
 	
 	<th>Titre</th>
-	<th>Contenu</th>
+	<th>Description</th>
+	<th>Annonceur</th>
 
 <% @annonces.each do |annonce| %>
 	<tr>
 		<td><%= link_to annonce.titre, annonce %></td>
 		<td><%= annonce.description %></td>
+		<td><%= @user_name_string %></td>
 
 	</tr>
 <% end %>

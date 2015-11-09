@@ -1,6 +1,11 @@
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
-
+		<div class='navbar-header'>
+			<%= link_to root_path, :class => 'navbar-link' do%>
+				<img id="logo" src="../../assets/fondatelier_logo50.png">
+				<%end%>
+			</a>
+		</div>
 		<div>
 			<ul class="nav navbar-nav navbar-right">
 				<% if user_signed_in? %>
@@ -12,13 +17,15 @@
 
 				<% if user_signed_in? %>
 
-				<li><%= link_to "Mes annonces", mes_annonces_path,:class => 'navbar-link' %></li>
+				<li><%= link_to mes_annonces_path,:class => 'navbar-link' do%><span class='glyphicon glyphicon-edit'></span> <%="Mes annonces"%>
+				</li><%end%>
 <!--
 		  		<li><%= link_to 'Modifier votre profil', edit_user_registration_path, :class => 'navbar-link' %></li>-->
-		  		<li><%= link_to destroy_user_session_path, method: :delete, :class => 'navbar-link'  do%><span class='glyphicon glyphicon-off'></span> <%="Se déconnecter"%>
+		  		<li><%= link_to destroy_user_session_path, method: :delete, :class => 'navbar-link' do%><span class='glyphicon glyphicon-off'></span> <%="Se déconnecter"%>
 		  		</li><%end%>
 				
-				<li><%= link_to 'Nouvelle annonce', new_annonce_path %><li>
+				<li><%= link_to new_annonce_path do %><span class='glyphicon glyphicon-pencil'></span> 
+					<%='Nouvelle annonce'%><li><%end%>
 
 				<% else %>
 				
