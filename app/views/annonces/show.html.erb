@@ -29,7 +29,7 @@
 	<br>
 
 	<% if user_signed_in? %>
-		<% if current_user.id == @annonce.user_id %>
+		<% if current_user.id == @annonce.user_id || current_user.id == 1%>
 			<%= link_to "Editer", edit_annonce_path(@annonce) %>
 			<%= link_to "Supprimer", annonce_path, method: :delete, data: { confirm: "êtes vous sur ?"} %>
 		<%end%>
