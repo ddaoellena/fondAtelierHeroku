@@ -11,7 +11,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 #upload image
 gem 'fog', '~> 1.35'
-gem 'mini_magick', '~> 4.3', '>= 4.3.6'
+#gem 'mini_magick', '~> 4.3', '>= 4.3.6'	
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 gem 'devise', '~> 3.5.2'
