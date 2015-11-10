@@ -11,7 +11,8 @@ class Annonces < ActiveRecord::Base
     belongs_to :user
 
     validates :cgu,  :acceptance => {:accept => true}
-	def  self.search(search)
+    
+	 def  self.search(search)
    		where("titre LIKE ?", "%#{search}%") 
   		where("description LIKE ?", "%#{search}%")
   	end
