@@ -77,7 +77,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
-  config.action_mailer.default_url_options = {:host => 'morning-atoll-2425.herokuapp.com'}
+  config.action_mailer.default_url_options = {:host => 'www.fondatelier.fr'}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address   => "smtp.sendgrid.net",
@@ -86,6 +86,6 @@ Rails.application.configure do
     :user_name => ENV["SENDGRID_USERNAME"],
     :password  => ENV["SENDGRID_PASSWORD"], # SMTP password is any valid API key
     :authentication => 'login',
-    :domain => 'morning-atoll-2425.herokuapp.com', # your domain to identify your server when connecting
+    :domain => 'www.fondatelier.fr', # your domain to identify your server when connecting
 }
 end
