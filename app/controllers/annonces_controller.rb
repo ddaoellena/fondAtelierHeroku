@@ -49,7 +49,7 @@ class AnnoncesController < ApplicationController
 	end
 
 	def edit
-		if @annonce.user_id == current_user.id
+		if @annonce.user_id == current_user.id || current_user.name == 'Admin'
 		else
 			redirect_to @annonce, notice: "Petit malin. Qu'essayez-vous de faire ?"	
 		end
@@ -66,8 +66,12 @@ class AnnoncesController < ApplicationController
 	end
 
 	def destroy
-		@annonce.destroy
-		redirect_to annonces_path, notice: "Annonce supprimée"
+		if @annonce.user_id == current_user.id || current_user.name == 'Admin'
+			@annonce.destroy
+			redirect_to annonces_path, notice: "Annonce supprimée"
+		else
+			redirect_to @annonce, notice: "Petit malin. Qu'essayez-vous de faire ?"	
+		end
 	end
 
 	private 
