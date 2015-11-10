@@ -1,8 +1,9 @@
 CarrierWave.configure do |config|
   config.fog_credentials = {
-      :provider               => 'AWS',
-      :aws_access_key_id      => "AKIAJENM62SN3JCPPW5Q",
-      :aws_secret_access_key  => "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"
+    :provider               => 'AWS',
+    :aws_access_key_id      => ENV['S3_KEY'],
+   	:aws_secret_access_key  => ENV['S3_SECRET'],
+   	:region					=> 'eu-west-1'
   }
   config.fog_directory  = "fondatelier"
   config.fog_public = 'false'
