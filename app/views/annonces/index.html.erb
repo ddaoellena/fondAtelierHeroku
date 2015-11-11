@@ -10,9 +10,12 @@
  
 	</div>
 
-	
+	<%if params[:categories].blank? %>
 	<h2 style:'text-align:center;'>Annonces les plus récentes</h2>
-	<h3><%= params[:categories] %></h3>
+	
+	<%else%>
+	<h3>Annonces publiées dans la catégorie "<%= params[:categories] %>"</h3>
+	<%end%>
 
 	<div class="dropdown">
 		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"> Catégories 
