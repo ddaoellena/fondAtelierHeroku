@@ -5,13 +5,15 @@
 	
 	<th>Titre</th>
 	<th>Description</th>
+	<th>Actions</th>
 	
 
 <% @my_annonces.each do |annonce| %>
 	<tr>
 		<td><%= link_to annonce.titre, annonce %></td>
 		<td><%= link_to annonce.description, annonce %></td>
-
+		<td><%= link_to "Editer", edit_annonce_path(annonce) %> |
+			<%= link_to "Supprimer", annonce_path(annonce), method: :delete, data: { confirm: "êtes vous sur ?"} %></td>
 	</tr>
 <% end %>
 
