@@ -5,14 +5,11 @@
 		<span class="glyphicon glyphicon-search"></span>
 		<%= text_field_tag :search, params[:search], placeholder: "Que cherchez-vous ?", class: "form-control input-xlarge" %>
 		<%= submit_tag "Recherche", class: "btn btn-default" %>
-	
 	<% end %>
- 
-	</div>
+ 	</div>
 
 	<%if params[:categories].blank? %>
 	<h2 style:'text-align:center;'>Annonces les plus récentes</h2>
-	
 	<%else%>
 	<h3>Annonces publiées dans la catégorie "<%= params[:categories] %>"</h3>
 	<%end%>
@@ -20,14 +17,12 @@
 	<div class="dropdown">
 		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"> Catégories 
 			<span class="caret"></span></button>
-			<ul class="dropdown-menu">
-	<% Categories.all.each do |categories| %>
-  	
-		<li><%= link_to categories.name, annonces_path(categories: categories.name) %></li>
-	
-	<% end %>
-	</ul>
-	</div>
+		<ul class="dropdown-menu">
+			<% Categories.all.each do |categories| %> 	
+			<li><%= link_to categories.name, annonces_path(categories: categories.name) %></li>
+			<% end %>
+		</ul>
+	</div><br>
 
 
 <table class='table table-hover'>
