@@ -1,3 +1,4 @@
+
 CarrierWave.configure do |config|
   config.fog_credentials = {
     :provider               => 'AWS',
@@ -7,4 +8,5 @@ CarrierWave.configure do |config|
   }
   config.fog_directory  = "fondatelier"
   config.fog_public = 'false'
+
 end

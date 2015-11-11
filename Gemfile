@@ -24,7 +24,7 @@ gem 'simple_form', '~> 3.2.0'
 gem 'rails_12factor', '~> 0.0.3'
 gem 'i18n', '~> 0.7.0'
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'
-
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

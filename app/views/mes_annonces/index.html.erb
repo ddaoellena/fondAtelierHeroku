@@ -1,4 +1,19 @@
 <div class="container">
 <h1>Mes annonces</h1>
+<h1><%=  %></h1>
+<table class='table table-hover'>
+	
+	<th>Titre</th>
+	<th>Description</th>
+	
 
+<% @my_annonces.each do |annonce| %>
+	<tr>
+		<td><%= link_to annonce.titre, annonce %></td>
+		<td><%= link_to annonce.description, annonce %></td>
+
+	</tr>
+<% end %>
+
+</table>
 </div>

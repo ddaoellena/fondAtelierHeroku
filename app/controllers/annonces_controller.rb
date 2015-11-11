@@ -1,4 +1,4 @@
-class AnnoncesController < ApplicationController
+	class AnnoncesController < ApplicationController
 	before_action :find_annonce, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!, except: [:index, :show]
 

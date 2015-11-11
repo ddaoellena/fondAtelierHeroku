@@ -3,7 +3,7 @@
 	<h3>Titre</h3>
 	<%= @annonce.titre %>
 
-	<h4>Crée le </h4><%= @annonce.created_at %>
+	<h4>Crée le </h4><%=I18n.l @annonce.created_at, format: :default%>
 
 	<h3>Catégorie</h3>
 		<%= @categorie %>
