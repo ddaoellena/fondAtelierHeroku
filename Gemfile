@@ -13,7 +13,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'fog', '~> 1.35'
 #gem 'mini_magick', '~> 4.3', '>= 4.3.6'	
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
-
+gem 'jquery-ui-rails'
 gem 'devise', '~> 3.5.2'
 
 gem 'devise-i18n-views'

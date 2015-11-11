@@ -16,7 +16,6 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-
 //tracking
 
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

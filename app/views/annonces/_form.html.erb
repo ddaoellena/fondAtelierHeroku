@@ -20,34 +20,36 @@
 	<div>
 	<%= f.label :titre, "Titre" %>
 	<%= f.text_field :titre, {class: "form-control input-lg"} %>
-	</div>
+	</div><br>
 
+	<div>
 	<%= f.label :categorie, "Catégorie" %>
 	<%= f.collection_select :category_id, Categories.all, :id, :name, {prompt: "Sélectionner une catégorie"},  {class: "form-control input-lg"}%>
+	</div><br>
 
 	<div>
 	<p>
     <%= f.label :description, "Description*" %><br>
     <%= f.text_area :description,  {class: "form-control input-lg"}%>
  	 </p>
-	</div>
+	</div><br>
 
 	<div>
 	<p>
     <%= f.label :telephone, "Téléphone" %><br>
-    <%= f.text_area :telephone, {class: "form-control input-lg"}%>
+    <%= f.text_field :telephone, {class: "form-control input-sm"}%>
  	 </p>
-	</div>
+	</div><br>
 
 	<div>
 	<%= f.label :images, "Images", {class: "control-label"} %>
 	<%= f.file_field :image, class: "file" %>
-	</div>
+	</div><br>
 
 	<div>
 	<%= f.label :ville, "Ville" %>
 	<%= f.collection_select :ville_id, Ville.all, :id, :nom_ville, {prompt: "Sélectionner une ville"},  {class: "form-control input-lg"}%>
-	</div>
+	</div><br>
 	<!--
 	<%= f.label :ecole, "Ecole" %>
 -->
