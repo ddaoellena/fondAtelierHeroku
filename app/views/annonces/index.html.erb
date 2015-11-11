@@ -13,14 +13,18 @@
 	
 	<h2 style:'text-align:center;'>Annonces les plus récentes</h2>
 	<h3><%= params[:categories] %></h3>
+
 	<div class="dropdown">
+		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"> Catégories 
+			<span class="caret"></span></button>
+
 	<% Categories.all.each do |categories| %>
-		<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Catégories <span class="caret"></span>
-  </button>
-  		<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+  	<ul class="dropdown-menu">
 		<li><%= link_to categories.name, annonces_path(categories: categories.name) %></li>
+	</ul>
 	<% end %>
 	</div>
+
 
 <table class='table table-hover'>
 	<tr class="info">
