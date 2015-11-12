@@ -8,10 +8,12 @@
 		<%= f.text_field :name, {class: "form-control input-lg"} %>
 		</div><br>
 
-		<div>
+		<div class='hidden'>
+			<fieldset disabled>
 		<%= f.label :email, "Destinataire" %>
-		<%= f.text_field :email, {class: "form-control input-lg"} %>
-		</div><br>
+		<%= f.text_field :email, {class: "form-control", id: "disabledInput", value: 'ddaoellena@gmail.com'} %></fieldset>
+		<br>
+		</div>
 
 		<div>
 		<%= f.label :message, "Contenu du message" %>
