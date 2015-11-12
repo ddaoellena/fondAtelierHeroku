@@ -1,6 +1,8 @@
 <div class='container'>
 
-	<h2><%= t('.contact_us') %></h2>
+
+	<h2>Contactez-nous</h2>
+	<h4>Pour reporter un bug ou poser des questions</h4>
 		<%= simple_form_for @contact, :url => contacts_path do |f| %>
  			<%= f.input :name, :label => t('.name') if ContactUs.require_name %>
 
