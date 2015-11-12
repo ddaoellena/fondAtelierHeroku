@@ -4,38 +4,56 @@
 	<%= @annonce.titre %>
 
 	<h4>Crée le </h4><%=I18n.l @annonce.created_at, format: :default%>
-
+	
+	<div>
 	<h3>Catégorie</h3>
 		<%= @categorie %>
 	<br>
+	</div>
 
+	<div>
 	<h3>Description</h3>
 		<%= @annonce.description %>
 	<br>
+	</div>
 
-	<h3><%= "Téléphone" if @annonce.telephone? %></h3>
-		<%= @annonce.telephone if @annonce.telephone? %>
-	<%= "<br>".html_safe if @annonce.telephone? %>
+	<%if @annonce.ville?%>
+		<div>
+			<h3>Téléphone</h3>
+			<%= @annonce.telephone %>
+			<br>
+		</div>
+	<%end%>
 
-	<h3><%= "Ville" if @annonce.ville? %></h3>
-	<%= @ville %>
-	<%= "<br>".html_safe if @annonce.ville? %>
+	<%if @annonce.ville?%>
+		<div>
+			<h3>Ville</h3>
+			<%= @ville %>
+			<br>
+		</div>
+	<%end%>
 
+	<div>
 	<h3><%= "Annonceur" %></h3>
 		<%= @user_name_string %>
 	<br>
+	<div>
 
-	<%= image_tag @annonce.image.url, :id => "image_annonce"%>
+	<div>
+		<%= image_tag @annonce.image.url, :id => "image_annonce"%>
 	<br>
+	</div>
 
 	<% if user_signed_in? %>
 		<% if current_user.id == @annonce.user_id || current_user.name == 'Admin'%>
-			<%= link_to "Editer", edit_annonce_path(@annonce) %>
-			<%= link_to "Supprimer", annonce_path, method: :delete, data: { confirm: "êtes vous sur ?"} %>
+			<div>
+				<%= link_to "Editer", edit_annonce_path(@annonce) %> |
+				<%= link_to "Supprimer", annonce_path, method: :delete, data: { confirm: "êtes vous sur ?"} %>
+			</div>
 		<%end%>
 	<%end%>
 
-	<%= link_to "Retour", annonces_path %>
+	<%= link_to "Retour à la liste des annonces", annonces_path %>
 </div>
 <!-- INUTILE
 <p id="notice"><%= notice %></p> -->
