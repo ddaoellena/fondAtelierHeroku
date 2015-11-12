@@ -22,7 +22,7 @@ ContactUs.setup do |config|
   # Configure the form gem to use.
   # Example:
   # config.form_gem = 'formtastic'
-  config.form_gem = nil
+  config.form_gem = 'simple_form'
 
   # Configure the redirect URL after a successful submission
   config.success_redirect = '/'

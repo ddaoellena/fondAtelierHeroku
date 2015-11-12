@@ -1,10 +1,18 @@
 <div class='container'>
-<h2><%= t('.contact_us') %></h2>
-<%= simple_form_for @contact, :url => contacts_path do |f| %>
-  <%= f.input :name, :label => t('.name') if ContactUs.require_name %>
-  <%= f.input :email, :label => t('.email') %>
-  <%= f.input :subject, :label => t('.subject') if ContactUs.require_subject %>
-  <%= f.input :message, :as => :text, :label => t('.message') %>
-  <%= f.button :submit, :value => t('.submit'), :alt => t('.submit'), :id => 'contact_us_contact_submit', :title => t('.submit') %>
-<% end %>
+
+	<h2><%= t('.contact_us') %></h2>
+		<%= simple_form_for @contact, :url => contacts_path do |f| %>
+ 			<%= f.input :name, :label => t('.name') if ContactUs.require_name %>
+
+ 			<% if user_signed_in? %>
+ 				<%= f.input :email, :label => t('.email'), input_html: { value: current_user.email } %>
+ 			<%else%>
+  				<%= f.input :email, :label => t('.email') %>
+  			<%end%>
+  			<%= f.input :subject, :label => t('.subject') if ContactUs.require_subject %>
+  			<%= f.input :message, :as => :text, :label => t('.message') %>
+  		<%= f.button :submit, :value => t('.submit'), :alt => t('.submit'), :id => 'contact_us_contact_submit', :title => t('.submit') %>
+	
+	<% end %>
+
 </div>
