@@ -30,6 +30,7 @@
 		<th>Titre</th>
 		<th>Description</th>
 		<th>Catégorie</th>
+		<th>Type de transaction</th>
 		<th>Annonceur</th>
 	</tr>
 <% @annonces.each do |annonce| %>
@@ -37,8 +38,8 @@
 		<td><%= link_to annonce.titre, annonce %></td>
 		<td><%= link_to annonce.description, annonce %></td>
 		<td><%= Categories.where(id: annonce.category_id).pluck(:name).to_s.tr('[]', '').tr('""', '') %></td>
+		<td><%= Type.where(id: annonce.type_id).pluck(:name).to_s.tr('[]', '').tr('""', '') %></td>
 		<td><%=  User.where(id: annonce.user_id).pluck(:name).to_s.tr('[]', '').tr('""', '') %></td>
-
 	</tr>
 <% end %>
 

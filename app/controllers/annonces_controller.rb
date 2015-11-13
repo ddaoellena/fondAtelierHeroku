@@ -26,7 +26,7 @@
 		@type = Type.where(id: @annonce.type_id).pluck(:name)
 		@type = @type.to_s
 		@type = @type.tr('[]', '')
-		@type = @type.tr('""', '')
+		@type_string = @type.tr('""', '')
 
 		@ville = Ville.where(id: @annonce.ville_id).pluck(:nom_ville)
 		@ville = @ville.to_s
