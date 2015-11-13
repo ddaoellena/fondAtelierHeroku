@@ -6,6 +6,7 @@ class Annonces < ActiveRecord::Base
     mount_uploader :image, ImageUploader
     
     validates :category_id, presence: true
+    validates :type_id, presence: true
 
     belongs_to :categories
     belongs_to :user
