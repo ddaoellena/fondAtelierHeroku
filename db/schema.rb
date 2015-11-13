@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151113103356) do
+ActiveRecord::Schema.define(version: 20151113133924) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,10 @@ ActiveRecord::Schema.define(version: 20151113103356) do
     t.string "nom_ecole", limit: 255
   end
 
+  create_table "statuts", force: :cascade do |t|
+    t.string "name"
+  end
+
   create_table "types", force: :cascade do |t|
     t.string "name"
   end
@@ -61,6 +65,7 @@ ActiveRecord::Schema.define(version: 20151113103356) do
     t.string   "confirmation_token",     limit: 255
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.integer  "statut_id"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
