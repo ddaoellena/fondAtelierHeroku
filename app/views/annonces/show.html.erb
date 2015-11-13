@@ -12,12 +12,18 @@
 	</div>
 
 	<div>
+	<h3>Type de transaction</h3>
+		<%= @type %>
+	<br>
+	</div>
+
+	<div>
 	<h3>Description</h3>
 		<%= @annonce.description %>
 	<br>
 	</div>
 
-	<%if @annonce.ville?%>
+	<%if @annonce.telephone?%>
 		<div>
 			<h3>Téléphone</h3>
 			<%= @annonce.telephone %>
@@ -25,7 +31,7 @@
 		</div>
 	<%end%>
 
-	<%if @annonce.ville?%>
+	<%if @annonce.ville_id?%>
 		<div>
 			<h3>Ville</h3>
 			<%= @ville %>

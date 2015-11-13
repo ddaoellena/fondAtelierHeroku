@@ -9,6 +9,7 @@ class Annonces < ActiveRecord::Base
 
     belongs_to :categories
     belongs_to :user
+    belongs_to :type
 
     validates :cgu,  :acceptance => {:accept => true}
     

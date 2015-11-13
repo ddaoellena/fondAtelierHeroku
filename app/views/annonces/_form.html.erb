@@ -27,6 +27,13 @@
 	<%= f.collection_select :category_id, Categories.all, :id, :name, {prompt: "Sélectionner une catégorie"},  {class: "form-control input-lg"}%>
 	</div><br>
 
+	<div>	
+	<p>
+    <%= f.label :type, "Type de transaction" %><br>
+    <%= f.collection_select :type_id, Type.all, :id, :name, {prompt: "Sélectionner un type de transaction"},  {class: "form-control input-lg"}%>
+ 	 </p>
+	</div><br>
+
 	<div>
 	<p>
     <%= f.label :description, "Description*" %><br>

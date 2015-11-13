@@ -23,6 +23,11 @@
 		@categorie = @categorie.tr('[]', '')
 		@categorie = @categorie.tr('""', '')
 
+		@type = Type.where(id: @annonce.type_id).pluck(:name)
+		@type = @type.to_s
+		@type = @type.tr('[]', '')
+		@type = @type.tr('""', '')
+
 		@ville = Ville.where(id: @annonce.ville_id).pluck(:nom_ville)
 		@ville = @ville.to_s
 		@ville = @ville.tr('[]', '')
@@ -76,7 +81,7 @@
 
 	private 
 		def annonce_params
-			params.require(:annonce).permit(:id, :titre, :description, :image, :telephone, :ville, :ecole, :category_id, :user_id, :cgu)
+			params.require(:annonce).permit(:id, :titre, :description, :image, :telephone, :category_id, :user_id, :cgu, :type_id)
 		end
 
 	private
