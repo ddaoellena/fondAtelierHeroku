@@ -11,6 +11,9 @@
       <%= f.label :name, "Nom d'utilisateur" %>
       <%= f.text_field :name, autofocus: true, class: "form-control" %>
 
+      <%= f.label :statut, "Vous êtes:" %>
+      <%= f.collection_select :statut_id, Statut.all, :id, :name, {prompt: "Statut"},  {class: "form-control input-lg"}%>
+
       <%= f.input :email, required: true, class: "form-control" %>
 
       <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), class: "form-control" %>
