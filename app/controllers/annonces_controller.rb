@@ -4,6 +4,7 @@
 
 
 	def index
+		@check_annonce = Annonces.any?
 		if params[:categories].blank?
 			@annonces = Annonces.all.order("created_at DESC")
 		else

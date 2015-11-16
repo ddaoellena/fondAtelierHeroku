@@ -24,27 +24,33 @@
 		</ul>
 	</div><br>
 
+<% if @check_annonce == true %>
+	<table class='table table-hover'>
+		<tr class="info">
+			<th>Titre</th>
+			<th>Description</th>
+			<th>Catégorie</th>
+			<th>Type de transaction</th>
+			<th>Annonceur</th>
+		</tr>
+		<% @annonces.each do |annonce| %>
+			<tr>
+				<td><%= link_to annonce.titre, annonce %></td>
+				<td><%= link_to annonce.description, annonce %></td>
+				<td><%= Categories.where(id: annonce.category_id).pluck(:name).to_s.tr('[]', '').tr('""', '') %></td>
+				<td><%= Type.where(id: annonce.type_id).pluck(:name).to_s.tr('[]', '').tr('""', '') %></td>
+				<td><%=  User.where(id: annonce.user_id).pluck(:name).to_s.tr('[]', '').tr('""', '') %></td>
+			</tr>
+		<% end %>
+	</table>
 
-<table class='table table-hover'>
-	<tr class="info">
-		<th>Titre</th>
-		<th>Description</th>
-		<th>Catégorie</th>
-		<th>Type de transaction</th>
-		<th>Annonceur</th>
-	</tr>
-<% @annonces.each do |annonce| %>
-	<tr>
-		<td><%= link_to annonce.titre, annonce %></td>
-		<td><%= link_to annonce.description, annonce %></td>
-		<td><%= Categories.where(id: annonce.category_id).pluck(:name).to_s.tr('[]', '').tr('""', '') %></td>
-		<td><%= Type.where(id: annonce.type_id).pluck(:name).to_s.tr('[]', '').tr('""', '') %></td>
-		<td><%=  User.where(id: annonce.user_id).pluck(:name).to_s.tr('[]', '').tr('""', '') %></td>
-	</tr>
+<% else %>
+	<%if user_signed_in? %>
+	<h3>Il n'y a pas encore d'annonce postée, <%= link_to 'postez une annonce', new_annonce_path %>.</h3>
+	<%else%>
+	<h2>Il n'y a pas encore d'annonce postée, connectez-vous pour poster une annonce.</h2>
+	<%end%>
 <% end %>
 
-</table>
-
-		
 
 </div>
