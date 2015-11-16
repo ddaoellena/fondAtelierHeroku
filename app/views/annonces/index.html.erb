@@ -46,9 +46,9 @@
 
 <% else %>
 	<%if user_signed_in? %>
-	<h3>Il n'y a pas encore d'annonce postée, <%= link_to 'postez une annonce', new_annonce_path %>.</h3>
+	<h3>Il n'y a pas encore d'annonce, <%= link_to 'postez une annonce', new_annonce_path %>.</h3>
 	<%else%>
-	<h2>Il n'y a pas encore d'annonce postée, connectez-vous pour poster une annonce.</h2>
+	<h2>Il n'y a pas encore d'annonce, <%= link_to 'connectez-vous', new_user_session_path %> pour poster une annonce.</h2>
 	<%end%>
 <% end %>
 
