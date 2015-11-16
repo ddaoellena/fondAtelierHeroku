@@ -1,5 +1,9 @@
 <div class="container">
-<h1>Editer l'annonce</h1>
+	<div class="panel-group">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Éditer annonce</div>
+        <div class="panel-body">
+
 	<%= form_for :annonce, url: annonce_path(@annonce), method: :patch do |f| %>
 	
 	<% if @annonce.errors.any? %>
@@ -71,4 +75,7 @@
 <% end %>
 
 <%= link_to 'Retour', annonces_path %> <br>
+</div>
+      </div>
+    </div>
 </div>

@@ -54,26 +54,6 @@ form{
     margin:0 auto;
 }
 
-#new_annonce_box{
-display: table;
-width:50%;
-height: 100px;
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a9db80+0,96c56f+100;Green+3D+%232 */
-background: #a9db80; /* Old browsers */
-background: -moz-linear-gradient(left,  #a9db80 0%, #96c56f 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, right top, color-stop(0%,#a9db80), color-stop(100%,#96c56f)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(left,  #a9db80 0%,#96c56f 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(left,  #a9db80 0%,#96c56f 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(left,  #a9db80 0%,#96c56f 100%); /* IE10+ */
-background: linear-gradient(to right,  #a9db80 0%,#96c56f 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9db80', endColorstr='#96c56f',GradientType=1 ); /* IE6-9 */
-
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
-
-}
-
 #new_annonce{
 text-align:center;
   color: white;
