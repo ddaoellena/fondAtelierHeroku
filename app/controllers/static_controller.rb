@@ -9,4 +9,8 @@ class StaticController < ApplicationController
 		
 	end
 
+	def list
+		@user = User.pluck(:email).to_s.tr('""', '')
+	end
+
 end

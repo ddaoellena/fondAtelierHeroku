@@ -3,7 +3,11 @@
 
 		<div>
 			<ul class="nav navbar-nav navbar-right">
-
+				<%if current_user.name == 'Admin' %>
+				<li>
+				<%=link_to "Liste", list_path, :class => 'navbar-link admin-link' %>
+				</li>
+				<%end%>
 				<li>
 				<%= link_to "À propos", static_a_propos_path,:class => 'navbar-link' %> 
 				</li>
