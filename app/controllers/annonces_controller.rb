@@ -82,7 +82,7 @@
 
 	private 
 		def annonce_params
-			params.require(:annonce).permit(:id, :titre, :description, :image, :telephone, :category_id, :user_id, :cgu, :type_id)
+			params.require(:annonce).permit(:id, :titre, :description, :image, :telephone, :category_id, :user_id, :cgu, :type_id, :ville_id)
 		end
 
 	private
