@@ -3,21 +3,26 @@
 
 		<div>
 			<ul class="nav navbar-nav navbar-right">
+
 				<%if user_signed_in?%>
-					<%current_user.name == 'Admin' %>
+					<% if current_user.name == 'Admin' %>
 					<li>
 					<%=link_to "Liste", list_path, :class => 'navbar-link admin-link' %>
 					</li>
 					<%end%>
 				<%end%>
+
 				<li>
 				<%= link_to "À propos", static_a_propos_path,:class => 'navbar-link' %> 
 				</li>
+
 				<li>	
 				<%= link_to "Conditions générales", static_cgu_path,:class => 'navbar-link' %>
 				</li>
+
 				<li><%= link_to "Contact", new_contact_path, :class => 'navbar-link' %>
 				</li>
+
 			</ul>
 
 		<div>
