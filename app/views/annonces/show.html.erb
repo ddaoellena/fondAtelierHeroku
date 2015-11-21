@@ -23,13 +23,7 @@
 	<br>
 	</div>
 
-	<%if @annonce.telephone?%>
-		<div>
-			<h3>Téléphone</h3>
-			<%= @annonce.telephone %>
-			<br>
-		</div>
-	<%end%>
+
 
 	<%if @annonce.ville_id? %>
 		<div>
@@ -44,6 +38,20 @@
 		<%= @user_name_string %>
 	<br>
 	<div>
+
+	<%if user_signed_in? %>
+	<%if @annonce.telephone?%>
+		
+			<div>
+			<h3>Téléphone</h3>
+			<%= @annonce.telephone %>
+			<br>
+			</div>
+		<%end%>
+	<%else%>
+		<h4> <%= link_to 'Connectez-vous', new_user_session_path %> pour voir les informations de cet annonceur afin de le contacter.</h4>	
+	
+	<%end%>
 
 	<div>
 		<%= image_tag @annonce.image.url, :id => "image_annonce"%>
