@@ -12,11 +12,15 @@ meta title:  @annonce.titre + " - Fond'Atelier",
 
 <div class="container">
 <div class='row'>
-<div class="col-md-8">
-	<h3>Titre</h3>
-	<%= @annonce.titre %>
+<div class="col-md-6">
+	<h1><%= @annonce.titre %></h1>
 
-	<h4>Crée le </h4><%=I18n.l @annonce.created_at, format: :default%>
+	<div>
+	<h3>Catégorie</h3>
+		<%= @categorie %>
+	<br>
+	</div>
+	
 
 	<div>
 	<h3>Description</h3>
@@ -45,10 +49,6 @@ meta title:  @annonce.titre + " - Fond'Atelier",
 	<%end%>
 	</div>
 
-	<div>
-		<%= image_tag @annonce.image.url, :id => "image_annonce"%>
-	<br>
-	</div>
 
 	<% if user_signed_in? %>
 		<% if current_user.id == @annonce.user_id || current_user.name == 'Admin'%>
@@ -63,27 +63,26 @@ meta title:  @annonce.titre + " - Fond'Atelier",
 	
 </div>
 
-<div class="col-md-4">
+<div class="col-md-6">
+	
+
 	<div>
-	<h3>Catégorie</h3>
-		<%= @categorie %>
-	<br>
+		<h3><%= @type %></h3>
 	</div>
 
 	<div>
-	<h3>Type de transaction</h3>
-		<%= @type %>
-	<br>
-	</div>
-
+	<p>Crée le <%=I18n.l @annonce.created_at, format: :default%>
 	<%if @annonce.ville_id? %>
-		<div>
-			<h3>Ville</h3>
-			<%= @ville %>
+			à <%= @ville %> </p>
 			<br>
-		</div>
+	
 	<%end%>
 
+	<div>
+		<%= image_tag @annonce.image.url, :id => "image_annonce"%>
+	<br>
+	</div>
+</div>
 	
 </div>
 
