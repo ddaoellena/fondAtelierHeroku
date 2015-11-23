@@ -27,12 +27,6 @@ meta title:  @annonce.titre + " - Fond'Atelier",
 		<%= @annonce.description %>
 	<br>
 	</div>
-<div>
-	<h3><%= "Annonceur" %></h3>
-		<%= @user_name_string %>
-	<br>
-	
-	</div>
 
 	<div>
 	<%if user_signed_in? %>
@@ -67,7 +61,7 @@ meta title:  @annonce.titre + " - Fond'Atelier",
 	
 
 	<div>
-		<h3><%= @type %></h3>
+		<h3><%= @type %> <span class='italic'>par <%= @user_name_string %></span></h3>
 	</div>
 
 	<div>
