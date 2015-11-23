@@ -20,6 +20,8 @@ meta title: "Liste des annonces-Fond'Atelier",
 	<h3>Annonces publiées dans la catégorie "<%= params[:categories] %>"</h3>
 	<%end%>
 
+<!-- Buttons filtrer annonces-->
+<div class='btn-group'>
 	<div class="dropdown">
 		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"> Catégories 
 			<span class="caret"></span></button>
@@ -29,6 +31,19 @@ meta title: "Liste des annonces-Fond'Atelier",
 			<% end %>
 		</ul>
 	</div><br>
+
+	<div class="dropdown">
+		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"> Type de transaction 
+			<span class="caret"></span></button>
+		<ul class="dropdown-menu">
+			<% Type.all.each do |type| %> 	
+			<li><%= link_to type.name, annonces_path(type: type.name) %></li>
+			<% end %>
+		</ul>
+	</div><br>
+</div>
+
+<!---->
 
 <% if @check_annonce == true %>
 	<table class='table table-hover'>

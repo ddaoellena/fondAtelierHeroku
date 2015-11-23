@@ -5,6 +5,9 @@
 
 	def index
 		@check_annonce = Annonces.any?
+
+	#filtrer la catégorie et le type de transaction
+
 		if params[:categories].blank?
 			@annonces = Annonces.all.order("created_at DESC")
 		else
@@ -12,6 +15,15 @@
 			@annonces = Annonces.where(category_id: @category_id).order("created_at DESC")
 		end
 
+		if params[:type].blank?
+			@annonces = Annonces.all.order("created_at DESC")
+		else
+			@type_id = Type.find_by(name: params[:type]).id
+			@annonces = Annonces.where(type_id: @type_id).order("created_at DESC")
+		end
+
+	#barre de recherche
+	
 		if params[:search]
 			@annonces = Annonces.search(params[:search]).order("created_at DESC")
 		end

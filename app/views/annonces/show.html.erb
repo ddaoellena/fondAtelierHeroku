@@ -35,8 +35,6 @@ meta title:  @annonce.titre + " - Fond'Atelier",
 	<br>
 	</div>
 
-
-
 	<%if @annonce.ville_id? %>
 		<div>
 			<h3>Ville</h3>
@@ -62,7 +60,6 @@ meta title:  @annonce.titre + " - Fond'Atelier",
 		<%end%>
 	<%else%>
 		<h4> <%= link_to 'Connectez-vous', new_user_session_path %> pour voir les informations de cet annonceur afin de le contacter.</h4>	
-	
 	<%end%>
 
 	<div>

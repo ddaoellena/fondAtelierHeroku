@@ -4,14 +4,23 @@ meta title: "Bienvenue sur Fond'Atelier",
 %>
 
 <div class="container">
-
-	<h1>Bienvenue sur Fond'Atelier</h1>
+	<div>	
+	<h1>Bienvenue sur Fond'Atelier !</h1>
+	
+	<h2>Qu'est-ce que Fond'Atelier ?</h2>
 		
-		<div>
 			<p>Fond'Atelier est un site facilitant l'échange de matériel entre élèves.</p>
 			<p>Vous pourrez trouver ici ce dont vous avez besoin pour vos projets: <%= link_to "Consultez les annonces", annonces_path %></p>
 			<p>Pour pouvoir poster une annonce <%= link_to new_user_session_path do%><%= "identifiez-vous" %><%end%> ou bien <%= link_to new_user_registration_path do%><%= "créez un compte" %><%end%>.
 			</p>
-		</div>
+			<p>Retrouvez Fond'Atelier sur Facebook et soyez tenus au courant des annonces et des news.</p>
+	</div>
+
+	<div id="news">
+		<h2>News</h2>
+		<h3>Mercredi 11 Novembre 2015</h3>
+		<p><strong>Lancement de Fond'Atelier.</strong><br> 
+		 Le site est limité dans un premier temps aux élèves et enseignants de l'École Supérieure d'Art d'Aix-en-Provence. <p>
+	</div>
 
 </div>
