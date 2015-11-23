@@ -11,44 +11,26 @@ meta title:  @annonce.titre + " - Fond'Atelier",
 }%>
 
 <div class="container">
-
+<div class='row'>
+<div class="col-md-8">
 	<h3>Titre</h3>
 	<%= @annonce.titre %>
 
 	<h4>Crée le </h4><%=I18n.l @annonce.created_at, format: :default%>
-	
-	<div>
-	<h3>Catégorie</h3>
-		<%= @categorie %>
-	<br>
-	</div>
-
-	<div>
-	<h3>Type de transaction</h3>
-		<%= @type %>
-	<br>
-	</div>
 
 	<div>
 	<h3>Description</h3>
 		<%= @annonce.description %>
 	<br>
 	</div>
-
-	<%if @annonce.ville_id? %>
-		<div>
-			<h3>Ville</h3>
-			<%= @ville %>
-			<br>
-		</div>
-	<%end%>
-
-	<div>
+<div>
 	<h3><%= "Annonceur" %></h3>
 		<%= @user_name_string %>
 	<br>
-	<div>
+	
+	</div>
 
+	<div>
 	<%if user_signed_in? %>
 	<%if @annonce.telephone?%>
 		
@@ -61,6 +43,7 @@ meta title:  @annonce.titre + " - Fond'Atelier",
 	<%else%>
 		<h4> <%= link_to 'Connectez-vous', new_user_session_path %> pour voir les informations de cet annonceur afin de le contacter.</h4>	
 	<%end%>
+	</div>
 
 	<div>
 		<%= image_tag @annonce.image.url, :id => "image_annonce"%>
@@ -77,6 +60,33 @@ meta title:  @annonce.titre + " - Fond'Atelier",
 	<%end%>
 
 	<%= link_to "Retour à la liste des annonces", annonces_path %>
+	
+</div>
+
+<div class="col-md-4">
+	<div>
+	<h3>Catégorie</h3>
+		<%= @categorie %>
+	<br>
+	</div>
+
+	<div>
+	<h3>Type de transaction</h3>
+		<%= @type %>
+	<br>
+	</div>
+
+	<%if @annonce.ville_id? %>
+		<div>
+			<h3>Ville</h3>
+			<%= @ville %>
+			<br>
+		</div>
+	<%end%>
+
+	
+</div>
+
 </div>
 <!-- INUTILE
 <p id="notice"><%= notice %></p> -->
