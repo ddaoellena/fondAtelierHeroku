@@ -10,7 +10,10 @@ class StaticController < ApplicationController
 	end
 
 	def list
-		@user = User.pluck(:email).to_s.tr('""', '')
+		@user = User.all.order(:id)
+		@user_id = User.pluck(:id).to_s.tr('""', '')
+		@user_email = User.pluck(:email).to_s.tr('""', '')
+		@user_name = User.pluck(:name).to_s.tr('""', '')
 	end
 
 end

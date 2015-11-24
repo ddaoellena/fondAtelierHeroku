@@ -1,4 +1,21 @@
 <div class="container">
 	<h1>Listes diverses</h1>
-	<%= @user %>
+	<table class='table table-hover'>
+		<tr class="info">
+			<th>ID</th>
+			<th>Email</th>
+			<th>Nom d'utilisateur</th>
+			<th>Date de création</th>
+		</tr>
+		<tr>
+		<% @user.each do |user|%>
+			<td><%= user.id %></td>
+			<td><%= user.email %></td>
+			<td><%= user.name %></td>
+			<td><%= user.created_at %></td>
+		</tr>
+		<%end%>
+	</table>
+	
+	
 </div>
