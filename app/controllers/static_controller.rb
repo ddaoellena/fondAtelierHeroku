@@ -11,6 +11,7 @@ class StaticController < ApplicationController
 
 	def list
 		@user = User.all.order(:id)
+		@user_count = User.all.count
 		@user_id = User.pluck(:id).to_s.tr('""', '')
 		@user_email = User.pluck(:email).to_s.tr('""', '')
 		@user_name = User.pluck(:name).to_s.tr('""', '')
