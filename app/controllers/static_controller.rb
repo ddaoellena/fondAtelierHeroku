@@ -10,6 +10,10 @@ class StaticController < ApplicationController
 	end
 
 	def list
+		if current_user.name == 'Admin' 
+		else
+			redirect_to root_path, notice: "Petit malin. Qu'essayez-vous de faire ?"	
+		end
 		@user = User.all.order(:id)
 		@user_count = User.all.count
 		@user_id = User.pluck(:id).to_s.tr('""', '')
