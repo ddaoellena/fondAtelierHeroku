@@ -69,14 +69,8 @@ meta title: "Editer l'annonce-Fond'Atelier",
 	<!--
 	<%= f.label :ecole, "Ecole" %>
 -->
-	
-	<div>
-	<br>
-	<%= f.label :cgu, "En créant cette annonce, vous vous engagez à respecter les conditions générales d'utilisateur" %>
-	<%= f.check_box :cgu %> 
-	</div>
 
-	<%= f.submit "Créer", class:"btn btn-primary" %>
+	<%= f.submit "Éditer", class:"btn btn-primary" %>
 <% end %>
 
 <%= link_to 'Retour', annonces_path %> <br>
