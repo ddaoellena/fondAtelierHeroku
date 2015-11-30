@@ -1,17 +1,11 @@
 <div class="container">
-	<h1>Nouvelle annonce</h1>
-
-	<%= form_for :news, url:news_index_path do |f| %>
+	<%= form_for :news, url:news_index_path(@new),  method: :patch do |f| %>
 
 	<div>
 	<%= f.label :titre, "Titre *" %>
 	<%= f.text_field :titre, {class: "form-control input-lg"} %>
 	</div><br>
 
-	<div>
-	<%= f.label :date, "Date *" %>
-	<%= f.text_field :date, {class: "form-control input-lg"} %>
-	</div>
 	<div>
 	<p>
     <%= f.label :contenu, "Contenu *" %><br>
@@ -21,6 +15,4 @@
 
 	<%= f.submit "Créer", class:"btn btn-primary" %>
 	<%end%>
-
-
 </div>

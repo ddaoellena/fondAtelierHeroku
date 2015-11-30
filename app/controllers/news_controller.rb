@@ -23,6 +23,14 @@ class NewsController < ApplicationController
 	def edit
 	end
 
+	def update
+		if @new.update(news_params)
+			redirect_to @new, notice: "Article éditée avec succès !"
+		else
+			render 'edit'
+		end
+	end
+
 	def show
 		
 	end
