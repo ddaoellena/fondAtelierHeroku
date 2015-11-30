@@ -60,7 +60,7 @@
 		@annonce = Annonces.new(annonce_params)
 		@annonce.user_id = current_user.id
 		if @annonce.save
-			redirect_to @annonce, notice: "Annonce crée avec succès !"
+			redirect_to @annonce, notice: "Annonce créée avec succès !"
 		else
 			render 'new', notice: "Oups ! Une erreur s'est produite..."
 		end

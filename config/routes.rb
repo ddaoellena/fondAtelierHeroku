@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 	get "/static/cgu", to: "static#cgu"
 	get "/static/a_propos", to: "static#a_propos"
 	get "/list", to: "static#list"
+	get "admin", to: 'welcome#admin'
 	get "contact", to: "contact#simple_form"
+	resources :news
 
 end

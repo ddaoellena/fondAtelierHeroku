@@ -1,0 +1,20 @@
+<div class="container">
+	<h1>Liste des articles</h1>
+	<table class='table table-hover'>
+		<tr class="info">
+			<th>Titre</th>
+			<th>Contenu</th>
+			<th>Date de création</th>
+			<th>Actions</th>
+		</tr>
+		<% @new.each do |news| %>
+		<tr>
+			<td><%=news.titre%></td>
+			<td><%=news.contenu%></td>
+			<td><%=news.created_at%></td>
+			<td><%=link_to 'Éditer', edit_news_path(news)%> | <%= link_to "Supprimer", news_path(news), method: :delete, data: { confirm: "êtes vous sur ?"} %></td>
+		</tr>
+		<%end%>
+	</table>
+<%= link_to "Nouvel article", new_news_path %>
+</div>
