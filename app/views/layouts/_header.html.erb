@@ -6,11 +6,13 @@
 				<img id="logo_header" src="../../assets/fondatelier_logo50.png">
 				<%end%>
 		</div>
+			<% if user_signed_in? == false %>
 			<ul class="nav navbar-nav navbar-left">
 				<li>
-				<%= link_to "À propos", static_a_propos_path,:class => 'navbar-link' %> 
+				<%= link_to static_a_propos_path,:class => 'navbar-link' do%><span class="glyphicon glyphicon-info-sign"></span><%=" À propos"%><%end%>
 				</li>
 			</ul>
+			<%end%>
 			<ul class="nav navbar-nav navbar-right">
 				<% if user_signed_in? %>
 				<li><p class="navbar-text">Connecté en tant que <strong><%= link_to edit_user_registration_path, :class => 'navbar-link' do %><%= current_user.name %></strong></p></li><%end%>
@@ -33,11 +35,11 @@
 
 				<% else %>
 				
-
+				<!--
 		  		<li><%= link_to new_user_registration_path, :class => 'navbar-link' do %><span class="glyphicon glyphicon-user"></span> <%= "Créer un compte" %>
 		  		</li><% end %>
 
-		  		<!--
+		  		
 		  		<li><%= link_to new_user_session_path, :class => 'navbar-link' do%> <span class="glyphicon glyphicon-log-in"></span> <%= "S'identifier" %>
 		  		</li><% end %>-->
 
