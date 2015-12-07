@@ -16,12 +16,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body{
-font-family: 'Open Sans', sans-serif;
+h1, h2{
+font-family: 'Montserrat', sans-serif;
+font-weight: 700;
 }
-
+h3, h4, p, a, span, li{
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 400;
+}
 .italic{
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'PT Sans', sans-serif;
   font-style: italic;
 }
 
@@ -75,14 +79,158 @@ margin-top: 20px;
 }
 
 #logo_header{
-margin-top:5px;
+margin-top: -5px;
 max-width: 90%;
 }
 
 #image_annonce{
-  max-width:440px;
 }
 
 .admin-link{
   color:red;
+}
+
+
+.message {
+background-color: rgba(0, 0, 0, 0.8);
+color:#FFF;
+position: absolute;
+top: -300px;
+left: 0;
+width: 100%;
+height: 300px;
+padding: 20px;
+transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+overflow: hidden;
+box-sizing: border-box; 
+z-index: 2;
+}
+
+
+#toggle {
+  position:absolute;
+  appearance:none;
+  cursor:pointer;
+  left:-100%;
+  top:-100%;
+}
+
+#toggle + label {
+position:absolute;
+cursor:pointer;
+padding:10px;
+background: #26ae90;
+width: 100px;
+border-radius: 3px;
+padding: 8px 10px;
+color: #FFF;
+line-height:20px;
+font-size:12px;
+text-align:center;
+-webkit-font-smoothing: antialiased;
+cursor: pointer;
+margin-top: 5px;
+transition:all 500ms ease;
+}
+#toggle + label:after {
+  content:"S'identifier" 
+}
+
+#toggle:checked ~ .message {
+  top: 0;
+}
+
+#close {
+  position:absolute;
+  appearance:none;
+  cursor:pointer;
+  left:-100%;
+  top:-100%;
+
+}
+#close + label {
+top: 10px;
+right: 10px;
+font-family: 'Montserrat', sans-serif;
+font-weight: 700;
+position:absolute;
+cursor:pointer;
+padding:10px;
+/*width: 100px;
+height: 100px;
+border-radius: 50px;*/
+padding: 8px 10px;
+color: #FFF;
+line-height:20px;
+font-size:12px;
+text-align:center;
+-webkit-font-smoothing: antialiased;
+cursor: pointer;
+margin:20px 50px;
+transition:all 500ms ease;
+font-size: 18px;
+}
+
+#close + label:after {
+  content:"x" 
+}
+
+#new_registration{
+font-family: 'Montserrat', sans-serif;
+font-weight: 700;
+color: grey;
+}
+
+#new_registration:hover{
+text-decoration: none;
+color: white;
+}
+
+#banner{
+  background-image: url("banner/34_perry-ogden_photo-of-francis-bacon-reece-mews-studio.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 500px;
+}
+
+#main_title_link{
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+#main_title_link{
+  text-decoration: none;
+}
+
+#sub_main_title{
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+#main_title_container{
+width: 800px;
+height: 100px;
+border-radius: 3px;
+background-color: rgba(0, 0, 0, 0);
+margin-left: auto;
+margin-right: auto;
+margin-top: 200px;
+display: flex;
+align-items: center;
+justify-content: center;
+
+  -webkit-transition: background-color .5s ease-out;
+  -moz-transition: background-color .5s ease-out;
+  -o-transition: background-color .5s ease-out;
+  transition: background-color .5s ease-out;
+
+}
+
+#main_title_container:hover{
+background-color: rgba(0, 0, 0, 0.5);
+
 }

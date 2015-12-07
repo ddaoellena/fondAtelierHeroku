@@ -9,19 +9,15 @@ meta title: "Fond'Atelier - Site d'échange de matériel",
      description: "Fond'Atelier est un site facilitant l'échange de matériel entre élèves. Vous pourrez trouver ici ce dont vous avez besoin pour vos projets."  
 }%>
 
-<div class="container">
-	<div>	
-	<h1>Bienvenue sur Fond'Atelier !</h1>
-	
-	<h2>Qu'est-ce que Fond'Atelier ?</h2>
-		
-			<p>Fond'Atelier est un site facilitant l'échange de matériel entre élèves.</p>
-			<p>Vous pourrez trouver ici ce dont vous avez besoin pour vos projets: <%= link_to "Consultez les annonces", annonces_path %></p>
-			<p>Pour pouvoir poster une annonce <%= link_to new_user_session_path do%><%= "identifiez-vous" %><%end%> ou bien <%= link_to new_user_registration_path do%><%= "créez un compte" %><%end%>.
-			</p>
-			<p>Retrouvez <a href="https://www.facebook.com/fondAtelier/">Fond'Atelier sur Facebook</a> et soyez tenus au courant des annonces et des news.</p>
+<div class="container-fluid" id="banner">
+	<div id="main_title_container">	
+		<%= link_to annonces_path, :id => 'main_title_link' do%><h1><%='De quoi avez-vous besoin ?'%></h1><%end%>
+	<!--<h2 id="sub_main_title">Sur Fond'Atelier trouvez tout ce dont vous avez besoin pour réaliser vos projets.</h2>-->	
 	</div>
 
+
+	
+	<!--
 	<div id="news">
 		<h2>News</h2>
 		<h3>Mercredi 11 Novembre 2015</h3>
@@ -32,5 +28,5 @@ meta title: "Fond'Atelier - Site d'échange de matériel",
 		<p><strong>Inscription via Facebook</strong><br>
 			Il est désormais possible de s'inscrire via Facebook !</p>
 	</div>
-
+	-->
 </div>

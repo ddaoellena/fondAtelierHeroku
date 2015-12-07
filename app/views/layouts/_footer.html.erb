@@ -1,8 +1,7 @@
-<nav class="navbar navbar-default" id="footer">
+
 	<div class="container-fluid">
 
-		<div>
-			<ul class="nav navbar-nav navbar-right">
+		
 
 				<%if user_signed_in?%>
 					<% if current_user.name == 'Admin' %>
@@ -12,9 +11,7 @@
 					<%end%>
 				<%end%>
 
-				<li>
-				<%= link_to "À propos", static_a_propos_path,:class => 'navbar-link' %> 
-				</li>
+				
 
 				<li>	
 				<%= link_to "Conditions générales", static_cgu_path,:class => 'navbar-link' %>
@@ -23,8 +20,5 @@
 				<li><%= link_to "Contact", new_contact_path, :class => 'navbar-link' %>
 				</li>
 
-			</ul>
-
-		<div>
-	</div>
-</nav>
+		
+		</div>

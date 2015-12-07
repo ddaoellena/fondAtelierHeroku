@@ -1,12 +1,16 @@
-<nav class="navbar navbar-default">
+	
 	<div class="container-fluid">
-		<div class='navbar-header'>
-			<%= link_to root_path, :class => 'navbar-link' do%>
+    	<div class="navbar-header">		
+			
+				<%= link_to root_path, :class => 'navbar-brand' do%>
 				<img id="logo_header" src="../../assets/fondatelier_logo50.png">
 				<%end%>
-			</a>
 		</div>
-		<div>
+			<ul class="nav navbar-nav navbar-left">
+				<li>
+				<%= link_to "À propos", static_a_propos_path,:class => 'navbar-link' %> 
+				</li>
+			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<% if user_signed_in? %>
 				<li><p class="navbar-text">Connecté en tant que <strong><%= link_to edit_user_registration_path, :class => 'navbar-link' do %><%= current_user.name %></strong></p></li><%end%>
@@ -33,11 +37,35 @@
 		  		<li><%= link_to new_user_registration_path, :class => 'navbar-link' do %><span class="glyphicon glyphicon-user"></span> <%= "Créer un compte" %>
 		  		</li><% end %>
 
+		  		<!--
 		  		<li><%= link_to new_user_session_path, :class => 'navbar-link' do%> <span class="glyphicon glyphicon-log-in"></span> <%= "S'identifier" %>
-		  		</li><% end %>
+		  		</li><% end %>-->
+
+		  		<input type="checkbox" name="toggle" id="toggle" />
+				<label for="toggle"></label>
+				<% if user_signed_in? == false%>
+
+				<div class="message"><h2>Vous êtes nouveau sur Fond'Atelier ? <%= link_to new_user_registration_path, :id => 'new_registration' do %> <%="Créez un compte"%>
+		  		<% end %> ou connectez-vous.</h2>
+				
+				<div class="form-group">
+				<%= simple_form_for("user", :url => user_session_path) do |f| %>
+  				<div class="form-inputs">
+    			<%= f.input :email, required: false, autofocus: true, class: "form-control" %>
+    			<%= f.input :password, required: false, class: "form-control" %>
+    			
+  				</div>
+     	 		<%= f.button :submit, "S'identifier" %>
+     	 		<%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+ 		 		<% end %>
+ 		 		</div>
+ 		 		
+ 		 		<input type="checkbox" name="toggle" id="close" />
+ 				<label for="toggle"></label>
+
+				</div>
+				<%end%>
 		
 				<% end %>
 			</ul>
 		</div>
-	</div>
-</nav>
